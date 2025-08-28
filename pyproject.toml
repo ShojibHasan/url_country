@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "url_country"
+dynamic = ["version"]
+description = "A Python package to determine the country of a URL/domain using multiple methods"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Mahfujul Hasan", email = "shojibhasan15@gmail.com"}
+]
+maintainers = [
+    {name = "Mahfujul Hasan", email = "shojibhasan15@gmail.com"}
+]
+keywords = ["url", "domain", "country", "geolocation", "whois", "dns", "geoip"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: Name Service (DNS)",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Networking",
+]
+requires-python = ">=3.7"
+dependencies = [
+    "tldextract",
+    "dnspython",
+    "python-whois",
+    "geoip2",
+    "pycountry",
+]
+
+[project.urls]
+Homepage = "https://github.com/ShojibHasan/url_country"
+Documentation = "https://github.com/ShojibHasan/url_country#readme"
+Repository = "https://github.com/ShojibHasan/url_country"
+"Bug Tracker" = "https://github.com/ShojibHasan/url_country/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+    "mypy>=0.800",
+]
+
+[tool.setuptools]
+packages = ["url_country"]
+
+[tool.setuptools.package-data]
+"url_country" = ["*.mmdb"]
+
+[tool.setuptools.dynamic]
+version = {attr = "url_country.__version__"}
+
+[tool.black]
+line-length = 88
+target-version = ['py37', 'py38', 'py39', 'py310', 'py311', 'py312']
+
+[tool.mypy]
+python_version = "3.7"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true

@@ -1,0 +1,17 @@
+include README.md
+include LICENSE
+include requirements.txt
+include *.mmdb
+include *.py
+recursive-include url_country *.mmdb
+recursive-include url_country *.py
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude *.pyd
+global-exclude __pycache__
+global-exclude .git*
+global-exclude .DS_Store
+global-exclude *.egg-info
+global-exclude .pytest_cache
+global-exclude .coverage
+global-exclude htmlcov
